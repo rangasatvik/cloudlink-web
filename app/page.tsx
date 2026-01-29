@@ -1,3 +1,5 @@
+import WaitlistForm from "./components/WaitlistForm";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white">
@@ -39,9 +41,15 @@ export default function Home() {
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3 text-xs text-white/60">
-            <span className="rounded-full border border-white/15 px-3 py-1">Read-only AWS access</span>
-            <span className="rounded-full border border-white/15 px-3 py-1">Per-service tracking</span>
-            <span className="rounded-full border border-white/15 px-3 py-1">Monthly impact estimates</span>
+            <span className="rounded-full border border-white/15 px-3 py-1">
+              Read-only AWS access
+            </span>
+            <span className="rounded-full border border-white/15 px-3 py-1">
+              Per-service tracking
+            </span>
+            <span className="rounded-full border border-white/15 px-3 py-1">
+              Monthly impact estimates
+            </span>
           </div>
         </section>
 
@@ -117,47 +125,17 @@ export default function Home() {
         </section>
 
         {/* Waitlist */}
-        <section id="waitlist" className="mt-16 rounded-2xl border border-white/10 bg-white/5 p-8">
+        <section
+          id="waitlist"
+          className="mt-16 rounded-2xl border border-white/10 bg-white/5 p-8"
+        >
           <h2 className="text-2xl font-semibold">Join early access</h2>
           <p className="mt-2 text-white/70">
             Get notified when Cloudlink opens onboarding for early customers.
           </p>
 
-          {/* Formspree form */}
-          <form
-            action="https://formspree.io/f/mlgnlgze"
-            method="POST"
-            className="mt-6 grid gap-3 md:grid-cols-2"
-          >
-            {/* Redirect back to your site after submit */}
-            <input type="hidden" name="_next" value="https://www.cloudlinkglobal.com/thanks" />
-
-
-            <input
-              name="name"
-              required
-              className="rounded-lg bg-black/40 border border-white/15 px-4 py-3 text-sm"
-              placeholder="Name"
-            />
-            <input
-              name="email"
-              type="email"
-              required
-              className="rounded-lg bg-black/40 border border-white/15 px-4 py-3 text-sm"
-              placeholder="Work email"
-            />
-            <input
-              name="company"
-              className="rounded-lg bg-black/40 border border-white/15 px-4 py-3 text-sm md:col-span-2"
-              placeholder="Company (optional)"
-            />
-            <button
-              type="submit"
-              className="md:col-span-2 rounded-lg bg-white px-5 py-3 font-semibold text-black hover:bg-white/90"
-            >
-              Request access
-            </button>
-          </form>
+          {/* ✅ Use the client-side component (prevents Formspree thanks page) */}
+          <WaitlistForm />
         </section>
 
         {/* Footer */}
